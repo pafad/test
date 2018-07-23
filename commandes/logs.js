@@ -1,7 +1,9 @@
 const superagent = require("superagent");
 const request = require("request");
 module.exports.run = async (client, message) => {
-
+    if(!message.member.hasPermissoins("ADMINISTRATOR")){
+        message.reply("Tu n'as pas les perms d'aministrateur.")
+    }else{
     const logsurl = "https://api.myjson.com/bins/wjtwa";
     request(logsurl, (err, res, body) => {
 
@@ -16,6 +18,7 @@ console.log('chargé avec succés')
     request({ url: logsurl, method: 'PUT', json: channel});
     message.channel.send(`logs dans le channel [${message.channel.id}] ajouté.`)
 })
+} 
 }
 
 module.exports.help = {
