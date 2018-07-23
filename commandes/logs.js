@@ -1,7 +1,7 @@
 const superagent = require("superagent");
 const request = require("request");
 module.exports.run = async (client, message) => {
-    if(!message.member.hasPermissoins("ADMINISTRATOR")){
+    if(!message.member.hasPermissions("ADMINISTRATOR")){
         message.reply("Tu n'as pas les perms d'aministrateur.")
     }else{
     const logsurl = "https://api.myjson.com/bins/wjtwa";
