@@ -42,7 +42,6 @@ module.exports.run = async (client, message) => {
                         return;  
                     }else{
                         userData[mention.id].rep += 1;
-                        request({ url: url, method: 'PUT', json: userData})
                         userData[Sender.id].LastRep = Date.now() + 86400000;
                         request({ url: url, method: 'PUT', json: userData})
                         message.channel.send(`${message.author} tu as donné un point de réputation à **${mention.username}**`)
