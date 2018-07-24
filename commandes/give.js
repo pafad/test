@@ -54,7 +54,7 @@ for(var i in channel){
     if(i.endsWith(client.guilds.findAll("id", channel))){
         client.channels.get(channel[i].logs).send({embed:{
             color: Math.floor(Math.random() * 16777214) + 1,
-            title:`Logs: ${new Date().toString()}`,
+            title:`Logs: ${new Date().toString("fr-FR")}`,
             description:`[Give] ${userData[Sender.id].username} -> ${mention.username} Ressources envoyé: ${args[2]} <a:coins:467999444567195651> depuis le serveur ${message.guild.name}`
         }})
 } 
