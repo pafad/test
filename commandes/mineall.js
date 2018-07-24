@@ -23,7 +23,7 @@ module.exports.run = async (client, message) => {
     var crit = userData[Sender.id].mineall*2;
     var nombre = Math.floor(Math.random()*crit);
     userData[Sender.id].coins = userData[Sender.id].coins +++ nombre;
-    userData[Sender.id].currentMana --- userData[Sender.id].currentMana;
+    userData[Sender.id].currentMana = userData[Sender.id].currentMana --- userData[Sender.id].currentMana;
     message.channel.send(`Tu as gagné ${nombre} <a:coins:467999444567195651> [Mana utilisé: ${userData[Sender.id].currentMana}]`)
     request({ url: url, method: 'PUT', json: userData})
     }
