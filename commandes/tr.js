@@ -10,8 +10,8 @@ console.log('chargement !')
 if(err || res.statusCode!== 200)return
 
 console.log('chargé avec succés')
-    let userData = JSON.parse(body);
     const trUrl = "https://api.myjson.com/bins/8rcka";
+    let userData = JSON.parse(body);
     request(trUrl, (err, res, body) => {
 
     if(err || res.statusCode!== 200)return
