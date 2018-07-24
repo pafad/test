@@ -32,7 +32,7 @@ if(!userData[Sender.id]){
     return;
 }else{
 if((Tr.time > Date.now()) && (Tr.time !== 0)){
-    message.channel.send("<a:tresure:467999359724945408> - " + `Le trésor n'est pas encore récupérable, il sera récupérable dans ${minutes} minutes et ${seconds} secondes. Votre combo est de : x${userData[Sender.id].combotr}, le dernier trésor à été récupérer par : ${Tr.taker} depuis le serveur : ${Tr.servtaker}`)
+    message.channel.send("<a:tresure:467999359724945408> - " + `Le trésor n'est pas encore récupérable, il sera récupérable dans ${minutes} minutes et ${seconds} secondes. Actuellement votre combo est de : x${userData[Sender.id].combotr}, le dernier trésor à été récupérer par : ${Tr.taker} depuis le serveur : ${Tr.servtaker}`)
     return;
 }else{
   var toAddC = 50 * userData[Sender.id].combotr;
