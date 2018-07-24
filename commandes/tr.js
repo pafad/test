@@ -32,7 +32,7 @@ if(!userData[Sender.id]){
     return;
 }else{
 if((Tr.time > Date.now()) && (Tr.time !== 0)){
-    message.channel.send(`Le trésor n'est pas encore récupérable, il sera récupérable dans ${minutes} minutes et ${seconds} secondes. Votre combo est de : x${userData[Sender.id].combotr}, le dernier trésor à été récupérer par : ${Tr.taker} depuis le serveur : ${Tr.servtaker}`)
+    message.channel.send("<a:tresure:467999359724945408> - " + `Le trésor n'est pas encore récupérable, il sera récupérable dans ${minutes} minutes et ${seconds} secondes. Votre combo est de : x${userData[Sender.id].combotr}, le dernier trésor à été récupérer par : ${Tr.taker} depuis le serveur : ${Tr.servtaker}`)
     return;
 }else{
   var toAddC = 50 * userData[Sender.id].combotr;
@@ -44,7 +44,7 @@ if((Tr.time > Date.now()) && (Tr.time !== 0)){
   Tr.taker = Sender.tag;
   Tr.servtaker = message.guild.name;
   Tr.time = Date.now() + Math.floor(Math.random()*4200000);
-  message.channel.send(`${Sender}, Tu as gagné ${50 * userData[Sender.id].combotr} <a:coins:467999444567195651> et ${25 * userData[Sender.id].combotr} <:XP:470615654639337472> [combo: ${userData[Sender.id].combotr}]`);
+  message.channel.send(Sender + "Tu as gagné " + 50 * userData[Sender.id].combotr + "<a:coins:467999444567195651> " + "et " + 25 * userData[Sender.id].combotr + "<:XP:470615654639337472> " + "[combo: " + userData[Sender.id].combotr + "]");
   request({ url: trUrl, method: 'PUT', json: Tr});
 
   const logsurl = "https://api.myjson.com/bins/wjtwa";
