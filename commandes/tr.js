@@ -2,7 +2,7 @@ const superagent = require("superagent");
 const request = require("request");
 module.exports.run = async (client, message) => {
 
-    const url = "https://api.myjson.com/bins/qylaq";
+    const url = "https://api.myjson.com/bins/n1r2y";
     request(url, (err, res, body) => {
 
 console.log('chargement !')
@@ -10,7 +10,7 @@ console.log('chargement !')
 if(err || res.statusCode!== 200)return
 
 console.log('chargé avec succés')
-    const trUrl = "https://api.myjson.com/bins/8rcka";
+    const trUrl = "https://api.myjson.com/bins/1buwmq";
     let userData = JSON.parse(body);
     var Sender = message.author;
     request(trUrl, (err, res, body) => {
