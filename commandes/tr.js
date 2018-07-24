@@ -12,6 +12,7 @@ if(err || res.statusCode!== 200)return
 console.log('chargé avec succés')
     const trUrl = "https://api.myjson.com/bins/8rcka";
     let userData = JSON.parse(body);
+    var Sender = message.author;
     request(trUrl, (err, res, body) => {
 
     if(err || res.statusCode!== 200)return
@@ -26,7 +27,6 @@ console.log('chargé avec succés')
     var distance = Tr.time - now;
     var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
     var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-var Sender = message.author;
 if(!userData[Sender.id]){
     message.reply("Tu n'es pas enregistré fais !register pour mettre à jour la base.")
     return;
