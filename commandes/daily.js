@@ -29,7 +29,6 @@ module.exports.run = async (client, message) => {
         return;
     }else{
     userData[Sender.id].coins += nombre;
-    request({ url: url, method: 'PUT', json: userData})
     userData[Sender.id].LastDaily = Date.now() + 86400000;
     request({ url: url, method: 'PUT', json: userData})
     message.channel.send(`${message.author} tu as gagné ${nombre} <a:coins:467999444567195651> , à demain ;)`)
