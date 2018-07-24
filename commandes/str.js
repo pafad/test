@@ -11,14 +11,14 @@ message.reply("tu n'est pas mon développeur")
 
     let Tr = JSON.parse(body);
     if(args[1] === "s"){
-    Tr.time = Date.now() +++ args[0]*1000;
+    Tr.time = Date.now() + args[0]*1000;
     request({ url: trUrl, method: 'PUT', json: Tr})
     message.channel.send(`trésor dans ${args[0]} secondes`)
     }
     
     if(args[1] === "min"){
     
-    Tr.time = Date.now() +++ args[0]*60000;
+    Tr.time = Date.now() + args[0]*60000;
     request({ url: trUrl, method: 'PUT', json: Tr})
     message.channel.send(`Trésor dans ${args[0]} minutes`)
     }
