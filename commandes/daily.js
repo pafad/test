@@ -28,7 +28,7 @@ module.exports.run = async (client, message) => {
         message.channel.send(`Ton daily n'est pas dispo, reviens dans ${hours} heures ${minutes} minutes et ${seconds} secondes.`)
         return;
     }else{
-    userData[Sender.id].coins += nombre;
+    userData[Sender.id].coins = userData[Sender.id].coins +++ nombre;
     userData[Sender.id].LastDaily = Date.now() + 86400000;
     request({ url: url, method: 'PUT', json: userData})
     message.channel.send(`${message.author} tu as gagné ${nombre} <a:coins:467999444567195651> , à demain ;)`)
