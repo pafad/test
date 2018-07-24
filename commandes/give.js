@@ -57,11 +57,11 @@ for(var i in channel){
             description:`[Give] ${userData[Sender.id].username} -> ${mention.username} Ressources envoyé: ${args[2]} <a:coins:467999444567195651> depuis le serveur ${message.guild.name}`
         }})
     }
-}
 }  
 })
               }else{
                   message.reply("spécifie un nombre de ressouces");
+              }
               }
             }
           }  
