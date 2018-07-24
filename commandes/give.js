@@ -32,7 +32,7 @@ const url = "https://api.myjson.com/bins/n1r2y";
               if(args[2] < 1){
                     message.reply("spécifie un nombre de ressouces");
               }else{
-                if (userData[Sender.id].coins < args[2]){
+                if (userData[Sender.id].coins > args[2]){
                     message.reply("Tu n'as pas assez de <a:coins:467999444567195651>")
              }else{
                 userData[Sender.id].coins -= args[2];
