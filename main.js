@@ -40,7 +40,10 @@ function mana(){
 for(var i in userData){
   userData[i].currentMana = userData[i].currentMana ++;
   client.on("ready", () => {
-    setInterval({callback: mana, ms: userData[i].secondMana})
+    for(var i in userData){
+    var time = userData[i].secondMana;
+    setInterval({callback: mana, ms: time})
+	}
   })
 }
 }
