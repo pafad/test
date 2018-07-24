@@ -41,7 +41,7 @@ module.exports.run = async (client, message) => {
                         message.channel.send("Tu ne peux pas donner un rep à un bot. <:chat:469113692492005376>")
                         return;  
                     }else{
-                        userData[mention.id].rep += 1;
+                        userData[mention.id].rep = userData[mention.id].rep +++ 1;
                         userData[Sender.id].LastRep = Date.now() + 86400000;
                         request({ url: url, method: 'PUT', json: userData})
                         message.channel.send(`${message.author} tu as donné un point de réputation à **${mention.username}**`)
