@@ -39,8 +39,8 @@ const url = "https://api.myjson.com/bins/n1r2y";
                     message.reply("Tu n'as pas assez de <a:coins:467999444567195651>")
                     return;
              }else{
-                userData[Sender.id].coins --- args[2];
-                userData[mention.id].coins +++ args[2];
+                userData[Sender.id].coins = userData[Sender.id].coins --- args[2];
+                userData[mention.id].coins = userData[mention.id].coins +++ args[2];
                 request({ url: url, method: 'PUT', json: userData})
                 message.reply(`Tu as give ${args[2]} <a:coins:467999444567195651> à ${mention.tag}`)
                 client.users.get(mention.id).send(`Tu as reçu ${args[2]} <a:coins:467999444567195651> de la part de ${Sender.tag}`)
