@@ -30,6 +30,9 @@ const url = "https://api.myjson.com/bins/n1r2y";
                   message.reply("spécifie la ressource")
               }else{
               if(args[2] > 1){
+                  if (userData[D'enfer.id].coins < args[2]){
+                         message.reply("Tu n'as pas assez de <a:coins:467999444567195651>")
+                  }else{
                 userData[Sender.id].coins -= args[2];
                 request({ url: url, method: 'PUT', json: userData})
                 userData[mention.id].coins += args[2];
@@ -54,6 +57,7 @@ for(var i in channel){
             description:`[Give] ${userData[Sender.id].username} -> ${mention.username} Ressources envoyé: ${args[2]} <a:coins:467999444567195651> depuis le serveur ${message.guild.name}`
         }})
     }
+}
 }  
 })
               }else{
