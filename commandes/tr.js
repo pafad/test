@@ -2,7 +2,7 @@ const superagent = require("superagent");
 const request = require("request");
 module.exports.run = async (client, message) => {
 
-    const url = "https://api.myjson.com/bins/n1r2y";
+    const url = "https://api.myjson.com/bins/qylaq";
     request(url, (err, res, body) => {
 
 console.log('chargement !')
