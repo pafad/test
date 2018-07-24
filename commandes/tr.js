@@ -60,7 +60,7 @@ if((Tr.time > Date.now()) && (Tr.time !== 0)){
       if(i.endsWith(client.guilds.findAll("id", channel))){
           client.channels.get(channel[i].logs).send({embed:{
               color: Math.floor(Math.random() * 16777214) + 1,
-              title:`Logs: ${new Date().toString()}`,
+              title:`Logs: ${new Date().toString("fr-FR")}`,
               description:`[Trésor] trésor récupéré par ${Tr.taker} | ${50 * userData[Sender.id].combotr} <a:coins:467999444567195651> ${25 * userData[Sender.id].combotr} <:XP:470615654639337472> [combo: ${userData[Sender.id].combotr}]`
           }})
       }
