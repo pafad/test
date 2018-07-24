@@ -39,11 +39,12 @@ let userData = JSON.parse(body);
 function mana(){
 for(var i in userData){
   if(i.endsWith(client.users.findAll("id", userData)))
-   setTimeout(() => {
    userData[i].currentMana = userData[i].currentMana ++;
-}, userData[i].secondMana);
 }
 }
+client.on("ready", () => {
+setInterval(mana, userData[client.users.findAll("id", userData)].secondMana);	
+})
 })
 
 client.on("ready", () => {
