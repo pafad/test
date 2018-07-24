@@ -37,9 +37,9 @@ if((Tr.time > Date.now()) && (Tr.time !== 0)){
 }else{
   var toAddC = 50 * userData[Sender.id].combotr;
   var toAddX = 25 * userData[Sender.id].combotr;
-  userData[Sender.id].combotr += 1;
-  userData[Sender.id].xp += toAddX;
-  userData[Sender.id].coins += toAddC;
+  userData[Sender.id].combotr = userData[Sender.id].combotr +++ 1;
+  userData[Sender.id].xp = userData[Sender.id].xp +++ toAddX;
+  userData[Sender.id].coins = userData[Sender.id].coins +++ toAddC;
   request({ url: url, method: 'PUT', json: userData});
   Tr.taker = Sender.tag;
   Tr.servtaker = message.guild.name;
