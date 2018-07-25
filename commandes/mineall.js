@@ -35,7 +35,8 @@ module.exports.run = async (client, message) => {
             userData[Sender.id].currentMana++;
             request({ url: url, method: 'PUT', json: userData})
         }, userData[Sender.id].secondMana);
-
+            
+        }
 })
 }
 
