@@ -26,27 +26,6 @@ fs.readdir("./commandes/", (err, files) => {
   console.log(`${jsFile.length} commands loaded !`)
 })
 
-const url = "https://api.myjson.com/bins/n1r2y";
-request(url, (err, res, body) => {
-
-console.log('chargement !')
-
-if(err || res.statusCode!== 200)return;
-
-console.log('chargé avec succés')
-//base de données
-let userData = JSON.parse(body);
-function mana(){
-for(var i in userData){
-  if(i.endsWith(client.users.findAll("id", userData)))
-   userData[i].currentMana = userData[i].currentMana ++;
-}
-}
-client.on("ready", () => {
-setInterval(mana, userData[client.users.findAll("id", userData)].secondMana);	
-})
-})
-
 client.on("ready", () => {
   client.user.setActivity(`${prefix}help sur ${client.guilds.size} serveurs by @αмαтєяαѕυ.exe#8754 `, {type: "WATCHING"})
   console.log(`${client.user.tag} connecté !`)
