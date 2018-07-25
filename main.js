@@ -78,8 +78,9 @@ client.on('message', async message =>{
   //base de données
     let userData = JSON.parse(body);
     var Sender = message.author;
+    if(!userData[client.users.findAll("id", userData)])return;
     userData[client.users.findAll("id", userData)].secondMana = Date.now() + 45000;
-    if(!userData[Sender.id])return;
+    
     var now = new Date().getTime();
     var distance = userData[Sender.id].secondMana - now;
     var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
