@@ -57,16 +57,16 @@ client.on('message', async message =>{
   //base de données
     let userData = JSON.parse(body);
     var Sender = message.author;
-    if(!userData[client.users.findAll("id", userData)])return;
-    userData[client.users.findAll("id", userData)].secondMana = Date.now() + 45000;
+    if(!userData[Sender.id])return;
+    userData[Sender.id].secondMana = Date.now() + 45000;
     
     var now = new Date().getTime();
     var distance = userData[Sender.id].secondMana - now;
     var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
     var seconds = Math.floor((distance % (1000 * 60)) / 1000);
     request({ url: url, method: 'PUT', json: userData})
-    if((userData[client.users.findAll("id", userData)].secondMana < Date.now()) && (userData[client.users.findAll("id", userData)].secondMana === 0)){
-       userData[client.users.findAll("id", userData)].currentMana++;
+    if((userData[Sender.id].secondMana < Date.now()) && (userData[Sender.id].secondMana === 0)){
+       userData[Sender.id].currentMana++;
        request({ url: url, method: 'PUT', json: userData})
     }else{
       return;
