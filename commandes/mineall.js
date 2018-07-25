@@ -27,7 +27,15 @@ module.exports.run = async (client, message) => {
     userData[Sender.id].currentMana = userData[Sender.id].currentMana --- userData[Sender.id].currentMana --- 1;
     request({ url: url, method: 'PUT', json: userData})
     }
-}
+    }
+        userData[Sender.id].secondMana = 45000;
+        request({ url: url, method: 'PUT', json: userData})
+        for(var i = 0; i < userData[Sender.id].manaMax; i++){
+        setTimeout(() => {
+            userData[Sender.id].currentMana++;
+            request({ url: url, method: 'PUT', json: userData})
+        }, userData[Sender.id].secondMana);
+
 })
 }
 
