@@ -65,11 +65,11 @@ client.on('message', async message =>{
     var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
     var seconds = Math.floor((distance % (1000 * 60)) / 1000);
     request({ url: url, method: 'PUT', json: userData})
-    if((userData[Sender.id].secondMana < Date.now()) && (userData[Sender.id].secondMana === 0)){
-       userData[Sender.id].currentMana++;
-       request({ url: url, method: 'PUT', json: userData})
+    if((userData[Sender.id].secondMana > Date.now()) && (userData[Sender.id].secondMana !== 0)){
+       return;
     }else{
-      return;
+      userData[Sender.id].currentMana++;
+      request({ url: url, method: 'PUT', json: userData})
     }
     })
   if(!message.content.startsWith(prefix))return;
