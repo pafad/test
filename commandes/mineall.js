@@ -21,7 +21,7 @@ module.exports.run = async (client, message) => {
         message.channel.send("Tu n'as plus de mana. <:chat:469113692492005376>")
     }else{
     var crit = userData[Sender.id].mine*userData[Sender.id].currentMana;
-    var nombre = Math.floor(Math.random()*crit);
+    var nombre = Math.floor(Math.random()+crit);
     userData[Sender.id].coins = userData[Sender.id].coins +++ nombre;
     message.channel.send(`Tu as gagné ${nombre} <a:coins:467999444567195651> [Mana utilisé: ${userData[Sender.id].currentMana}]`)
     userData[Sender.id].currentMana = userData[Sender.id].currentMana --- userData[Sender.id].currentMana --- 1;
