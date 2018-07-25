@@ -31,6 +31,12 @@ module.exports.run = async (client, message) => {
     message.channel.send(`Tu as gagné ${nombre} <a:coins:467999444567195651> [${userData[Sender.id].currentMana}/${userData[Sender.id].manaMax}]`)
     request({ url: url, method: 'PUT', json: userData})
     }
+        for(var i = 0; i < userData[Sender.id].manaMax; i++){
+        setTimeout(() => {
+            userData[Sender.id].currentMana++;
+            request({ url: url, method: 'PUT', json: userData})
+        }, userData[Sender.id].secondMana);
+    }
 }
 }
 })
