@@ -45,32 +45,7 @@ client.on("guildDelete",async guild => {
 client.on('message', async message =>{
     //blacklist du bot
     if(message.author.bot)return;
- //régen de mana je teste
-    const url = "https://api.myjson.com/bins/n1r2y";
-    request(url, (err, res, body) => {
-
-    console.log('chargement !')
-
-    if(err || res.statusCode!== 200)return;
-
-    console.log('chargé avec succés')
-  //base de données
-    let userData = JSON.parse(body);
-    var Sender = message.author;
-    if(!userData[Sender.id])return;
-    userData[Sender.id].secondMana = Date.now() + 45000;
-    request({ url: url, method: 'PUT', json: userData})
-    var now = new Date().getTime();
-    var distance = userData[Sender.id].secondMana - now; 
-    var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-    var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-    if((userData[Sender.id].secondMana > Date.now()) && (userData[Sender.id].secondMana !== 0)){
-       return;
-    }else{
-      userData[Sender.id].currentMana++;
-      request({ url: url, method: 'PUT', json: userData})
-    }
-    })
+ 
   if(!message.content.startsWith(prefix))return;
 
   let messageArray = message.content.split(" ");
