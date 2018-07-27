@@ -12,12 +12,10 @@ const url = "https://api.myjson.com/bins/n1r2y";
   //base de données
     let userData = JSON.parse(body);
   var globalUsers = 0;
-  var globalMoney = 0;
   var globalRichest = '';
   var globalRichest$ = 0;
   for(var i in userData){
      if(i.endsWith(client.users.findAll("id", userData))){
-       globalMoney += userData[i].coins;
        globalUsers += 1;
        if(userData[i].coins > globalRichest$){
            globalRichest$ = userData[i].coins;
@@ -35,8 +33,8 @@ const url = "https://api.myjson.com/bins/n1r2y";
       inline:true
   },
   {
-      name:"points total du jeu",
-      value:globalMoney,
+      name:"classement test",
+      value:`${userData[i]}: ${userData[i].coins}`,
       inline:false
   },
   {
