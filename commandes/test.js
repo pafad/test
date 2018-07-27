@@ -34,7 +34,7 @@ const url = "https://api.myjson.com/bins/n1r2y";
   },
   {
       name:"classement test",
-      value:`${userData[i.map()].username}: ${userData[i.map()].coins}`,
+      value:`${userData[i++].username}: ${userData[i++].coins}`,
       inline:false
   },
   {
