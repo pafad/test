@@ -1,3 +1,5 @@
+const superagent = require("superagent");
+const request = require("request");
 module.exports.run = async (client, message, args) => {
    const url = "https://api.myjson.com/bins/n1r2y";
     request(url, (err, res, body) => {
