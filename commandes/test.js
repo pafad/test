@@ -15,7 +15,7 @@ console.log('chargé avec succés')
   var globalRichest = '';
   var globalRichest$ = 0;
   for(var i in userData){
-     if(i.endsWith(client.users.findAll("id", userData).map())){
+     if(i.endsWith(client.users.findAll("id", userData))){
        globalMoney += userData[i].coins;
        globalUsers += 1;
        if(userData[i].coins > globalRichest$){
@@ -34,8 +34,8 @@ console.log('chargé avec succés')
       inline:true
   },
   {
-      name:"points total du jeu",
-      value:globalMoney,
+      name:"classement en test",
+      value:`${userData[i].username[1]} : ${userData[i].coins[1]}`,
       inline:false
   },
   {
