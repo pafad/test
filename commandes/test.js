@@ -1,4 +1,13 @@
 module.exports.run = async (client, message, args) => {
+   const url = "https://api.myjson.com/bins/n1r2y";
+    request(url, (err, res, body) => {
+
+console.log('chargement !')
+
+if(err || res.statusCode!== 200)return
+
+console.log('chargé avec succés')
+    let userData = JSON.parse(body);
   var globalUsers = 0;
   var globalMoney = 0;
   var globalRichest = '';
@@ -38,6 +47,7 @@ module.exports.run = async (client, message, args) => {
       text:"Stats Global"
       }
   }})
+  })
 }
 
 module.exports.help = {
