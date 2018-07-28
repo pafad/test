@@ -45,7 +45,7 @@ const url = "https://api.myjson.com/bins/n1r2y";
                 message.reply(`Tu as give ${args[2]} <a:coins:467999444567195651> à ${mention.tag}`)
                 client.users.get(mention.id).send(`Tu as reçu ${args[2]} <a:coins:467999444567195651> de la part de ${Sender.tag}`)
 
-const logsurl = "https://api.myjson.com/bins/wjtwa";
+const logsurl = "https://api.myjson.com/bins/jnhui";
 request(logsurl, (err, res, body) => {
 
 console.log('chargement !')
