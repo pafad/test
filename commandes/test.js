@@ -35,7 +35,7 @@ console.log('chargé avec succés')
   },
   {
       name:"classement en test",
-      value:`${userData[userData].username} : ${userData[userData].coins}\n`,
+      value:`${userData.username} : ${userData.coins}\n`,
       inline:false
   },
   {
