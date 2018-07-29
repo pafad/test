@@ -35,7 +35,7 @@ console.log('chargé avec succés')
   },
   {
       name:"classement en test",
-      value:`${client.users.findAll("name",userData[i].username)} : ${userData[i].coins}\n`,
+      value:`${userData[i].username} : ${userData[i].coins}\n`,
       inline:false
   },
   {
