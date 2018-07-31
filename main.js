@@ -45,26 +45,20 @@ client.on("guildDelete",async guild => {
 client.on('message', async message =>{
     //blacklist du bot
     if(message.author.bot)return;
-    const superagent = require("superagent")
-const request = require("request")
-module.exports.run = async (client, message) => {
-    const url = "https://api.myjson.com/bins/n1r2y";
-    request(url, (err, res, body) => {
+	 const url = "https://api.myjson.com/bins/n1r2y";
+   	 request(url, (err, res, body) => {
 
-    console.log('chargement !')
+	console.log('chargement !')
 
-    if(err || res.statusCode!== 200)return
-
-    console.log('chargé avec succés')
-  //base de données
-    let userData = JSON.parse(body);
-    var Sender = message.author;
-	if(!userData[Sender.id])return;
-	if(userData[Sender.id].xp === userData[Sender.id].level * 1000){
+	if(err || res.statusCode!== 200)return
+	let userData = JSON.parse(body);
+        let Sender = message.author;
+     if(!userData[Sender.id])return;
+     if(userData[Sender.id].xp === userData[Sender.id].level * 1000){
 	userData[Sender.id].level++;
         request({ url: url, method: 'PUT', json: userData});
 	}
-    })
+	})
   if(!message.content.startsWith(prefix))return;
 
   let messageArray = message.content.split(" ");
