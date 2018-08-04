@@ -1,10 +1,8 @@
 const superagent = require("superagent");
 const request = require("request");
 module.exports.run = async (client, message, args) => {
-if(message.author.id !== "306119836503900161" || message.author.id !== "287982988438929418"){
-message.reply("tu n'est pas mon développeur")
-}else{
-    const trUrl = "https://api.myjson.com/bins/1buwmq";
+if(message.author.id == "306119836503900161" || message.author.id == "287982988438929418"){
+const trUrl = "https://api.myjson.com/bins/1buwmq";
     request(trUrl, (err, res, body) => {
 
     if(err || res.statusCode!== 200)return
@@ -23,6 +21,9 @@ message.reply("tu n'est pas mon développeur")
     message.channel.send(`Trésor dans ${args[0]} minutes`)
     }
     })
+
+}else{
+    message.reply("tu n'est pas mon développeur")
     }
     }
     module.exports.help = {
