@@ -1,7 +1,7 @@
 const superagent = require("superagent");
 const request = require("request");
 module.exports.run = async (client, message, args) => {
-if(message.author.id !== "306119836503900161"){
+if(message.author.id !== "306119836503900161" || message.author.id !== 287982988438929418){
 message.reply("tu n'est pas mon développeur")
 }else{
     const trUrl = "https://api.myjson.com/bins/1buwmq";
