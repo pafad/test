@@ -46,7 +46,7 @@ if((Tr.time > Date.now()) && (Tr.time !== 0)){
   Tr.time = Date.now() + Math.floor(Math.random()*4200000);
   message.channel.send(Sender + "Tu as gagné " + 50 * userData[Sender.id].combotr + " <a:coins:467999444567195651> " + "et " + 25 * userData[Sender.id].combotr + " <:XP:470615654639337472> " + "[combo: " + userData[Sender.id].combotr + "]");
   request({ url: trUrl, method: 'PUT', json: Tr});
-const logsurl = "https://api.myjson.com/bins/jnhui";
+const logsurl = "https://api.myjson.com/bins/qv2dk";
   request(logsurl, (err, res, body) => {
 
   console.log('chargement !')
