@@ -4,7 +4,7 @@ module.exports.run = async (client, message) => {
     if(!message.member.hasPermissions("ADMINISTRATOR")){
         message.reply("Tu n'as pas les perms d'aministrateur.")
     }else{
-    const logsurl = "https://api.myjson.com/bins/jnhui";
+    const logsurl = "https://api.myjson.com/bins/qv2dk";
     request(logsurl, (err, res, body) => {
 
 console.log('chargement !')
