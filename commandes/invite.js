@@ -1,5 +1,5 @@
-module.exports.run = async (client,message, args) => {
-  message.channel.send('', { embed: {
+module.exports.run = async (client,message) => {
+  message.channel.send({ embed: {
     color: 0x9101ff,
     title: "Tu veux m'inviter voici le lien:",
     url: '',
