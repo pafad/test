@@ -17,9 +17,9 @@ if(!user){
     return;
    }else{
       if(!ban[user.id]) ban[user.id] = {} 
-      if(!ban[user.id].raison) ban[user.id].raison = args[1].join(" ")
+      if(!ban[user.id].raison) ban[user.id].raison = message.content.substr(3 + user.id.lenght)
       request({ url: banUrl, method: 'PUT', json: ban})
-      message. channel. send (`${user.tag} a été ban du jeu pour: ${args[1].join(" ")}`) 
+      message. channel. send (`${user.tag} a été ban du jeu pour: ${message.content.substr(3 + user.id.lenght)}`) 
   return
       } 
   }else{
