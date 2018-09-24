@@ -4,6 +4,7 @@ const request = require("request")
 module.exports.run = async (client, message, args) => {
 
 const banUrl = "https://api.myjson.com/bins/188vrw";
+var user = client.users.find("id",args[0]);
     request(banUrl, (err, res, body) => {
 
     if(err || res.statusCode!== 200)return
@@ -11,11 +12,14 @@ const banUrl = "https://api.myjson.com/bins/188vrw";
     let ban = JSON.parse(body);  
   
 if(message.author.id == "377925283098918912" || message.author.id == "287982988438929418"){
-if(!client.users.find("id",args[0])){
+if(!user){
 	message.channel.send("utilisateur introuvable")  
     return;
    }else{
-      message. channel. send ("indisponible") 
+      if(!ban[user.id]) ban[user.id] = {} 
+      if(!ban[user.id].raison) ban[user.id].raison = args.join(" ")[1]
+      request({ url: banUrl, method: 'PUT', json: ban})
+      message. channel. send (`${user.tag} a été ban du jeu pour: ${args. join(" ")[1]}`) 
   return
       } 
   }else{
