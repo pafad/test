@@ -11,7 +11,7 @@ const banUrl = "https://api.myjson.com/bins/188vrw";
     let ban = JSON.parse(body);  
   
 if(message.author.id == "377925283098918912" || message.author.id == "287982988438929418"){
-if(!message.mentions.users.first() || ! client.users.find("id",args[0]")){
+if(!message.mentions.users.first() || ! client.users.find("id",args[0])){
 	message.channel.send("utilisateur introuvable")  
     return;
    }else{
