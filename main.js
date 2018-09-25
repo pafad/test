@@ -81,6 +81,7 @@ client.on('message', async message =>{
 		  }else{
 	commandFile.run(client, message, args);
 		  } 
- } 
+	   }) 
+ }
 });
 client.login(process.env.token);
