@@ -66,6 +66,21 @@ client.on('message', async message =>{
   let args = messageArray.slice(1);
 
   let commandFile = client.commands.get(cmd.slice(prefix.length));
-  if(commandFile) commandFile.run(client, message, args);
+  if(commandFile){
+	  const banUrl = "https://api.myjson.com/bins/188vrw";
+
+    request(banUrl, (err, res, body) => {
+
+    if(err || res.statusCode!== 200)return
+
+    let ban = JSON.parse(body);
+    
+	    if(ban[message.author.id]) {
+		   message.reply("il semblerait que tu as été banni du jeu") 
+		    return;
+		  }else{
+	commandFile.run(client, message, args);
+		  } 
+ } 
 });
 client.login(process.env.token);
