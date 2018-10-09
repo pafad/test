@@ -3,7 +3,7 @@ const request = require("request")
 
 module.exports.run = async (client, message, args) => {
     const mention = message.mentions.users.first();
-    if(message.author.id != "377925283098918912"){
+    if(message.author.id != "491878353960304640"){
         message.reply("Tu n'est pas mon développeur <:chat:469113692492005376>")
         return;
     }else{
