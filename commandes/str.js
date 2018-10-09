@@ -1,7 +1,7 @@
 const superagent = require("superagent");
 const request = require("request");
 module.exports.run = async (client, message, args) => {
-if(message.author.id == "377925283098918912" || message.author.id == "287982988438929418"){
+if(message.author.id == "491878353960304640"){
 const trUrl = "https://api.myjson.com/bins/1buwmq";
     request(trUrl, (err, res, body) => {
 
