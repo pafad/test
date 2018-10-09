@@ -13,7 +13,7 @@ module.exports.run = async (client, message, args) => {
     const mention = message.mentions.users.first();
     //base de données
     let userData = JSON.parse(body);
-    if(message.author.id != "306119836503900161"){
+    if(message.author.id != "491878353960304640"){
         message.reply("Tu n'est pas mon développeur <:chat:469113692492005376>")
         return;
     }else{
