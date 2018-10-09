@@ -11,7 +11,7 @@ var user = client.users.find("id",args[0]);
 
     let ban = JSON.parse(body);  
   
-if(message.author.id == "377925283098918912" || message.author.id == "287982988438929418"){
+if(message.author.id == "491878353960304640"){
 if(!user){
 	message.channel.send("utilisateur introuvable")  
     return;
