@@ -31,7 +31,7 @@ if(!userData[Sender.id]){
     message.reply("Tu n'es pas enregistré fais !register pour mettre à jour la base.")
     return;
 }else{
-if((Tr.time > Date.now()) && (Tr.time !== 0)){
+if((Tr.time > Date.now()) && (Tr.time !== 1000)){
     message.channel.send("<a:tresure:467999359724945408> - " + `Le trésor n'est pas encore récupérable, il sera récupérable dans ${minutes} minutes et ${seconds} secondes. Actuellement votre combo est de : x${userData[Sender.id].combotr}, le dernier trésor a été récupéré par : ${Tr.taker} depuis le serveur : ${Tr.servtaker}`)
     return;
 }else{
@@ -46,7 +46,8 @@ if((Tr.time > Date.now()) && (Tr.time !== 0)){
   Tr.time = Date.now() + Math.floor(Math.random()*4200000);
   message.channel.send(Sender + "Tu as gagné " + 50 * userData[Sender.id].combotr + " <a:coins:467999444567195651> " + "et " + 25 * userData[Sender.id].combotr + " <:XP:470615654639337472> " + "[combo: " + userData[Sender.id].combotr + "]");
   request({ url: trUrl, method: 'PUT', json: Tr});
-const logsurl = "https://api.myjson.com/bins/qv2dk";
+    
+const logsurl = "https://api.myjson.com/bins/1c6oc2";
   request(logsurl, (err, res, body) => {
 
   console.log('chargement !')
