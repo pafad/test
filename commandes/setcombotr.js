@@ -17,7 +17,7 @@ module.exports.run = async (client, message, args) => {
         message.reply("Tu n'est pas mon développeur <:chat:469113692492005376>")
         return;
     }else{
-        if(!mention){
+        if(!mention.id){
             message.reply("mentionne un utilisateur <:chat:469113692492005376>")
             return;
         }else{
