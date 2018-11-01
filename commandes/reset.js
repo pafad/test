@@ -8,7 +8,7 @@ const url = "https://api.myjson.com/bins/n1r2y";
     if(err || res.statusCode!== 200)return
 
     let userData = JSON.parse(body);
-    let user = message.mention.users.first() || client.users.find("id", args[0]) || client.users.find("name", args.join(" "));
+    let user = message.mentions.users.first() || client.users.find("id", args[0]) || client.users.find("name", args.join(" "));
     if(!message.author.id == "491878353960304640"){
       message.channel.send("tu n'es pasmon développeur.")
       return;
