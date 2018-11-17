@@ -15,7 +15,7 @@ if(err || res.statusCode!== 200)return
     var collect = message.channel.createCollector(m => m);
     message.reply("Choisi entre **Feu**, **Eau**, **Terre**, **Air**, **Ténèbres**, **Lumière**")
     collect.on("collect", m => {
-    if(message.author.id !== userData[Sender.id])return;
+    if(m.author.id !== userData[Sender.id])return;
     if(m.content === "Feu"){
         message.channel.send("Tu as choisi l'élément **Feu**")
         userData[Sender.id].element = "Feu" 
