@@ -59,6 +59,57 @@ client.on('message', async message =>{
         request({ url: url, method: 'PUT', json: userData});
 	}
 	})
+	
+	
+
+	
+
+   			
+if(msg.content.startsWith(">hr")) {
+	
+
+   			const timeurl = "https://api.myjson.com/bins/1dn9h4"; 
+
+   		 	
+
+   			request(timeurl, (err, res, body) => { 
+
+   				
+
+   				console.log('chargement !') 
+
+   				
+
+   				if(err || res.statusCode!== 200)return
+
+   				
+
+   				 console.log('chargé avec succés') 
+
+   				 
+
+   				 var time = JSON.parse(body)
+
+   				 
+
+   				 if(!time[message.author.id]) time[message.author.id] = {}
+
+   				 
+
+   				 if(!time[message.author.id].lastHr) time[message.author.id].lastHr = new Date().getTime()+1000*60*60;
+
+   				 
+
+   				 time[message.author.id].lastHr = new Date().getTime() + 360000;
+
+   				 request({ url: timeurl, method: 'PUT', json: time})
+
+   				 
+
+   				 })     
+
+}
+	
   if(!message.content.startsWith(prefix))return;
 
   let messageArray = message.content.split(" ");
