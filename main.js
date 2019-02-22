@@ -100,7 +100,7 @@ if(message.content.startsWith(">hr")) {
 
    				 
 
-   				 time[message.author.id].lastHr = new Date().now() +++ nombre;
+   				 time[message.author.id].lastHr = new Date.now() +++ nombre;
 
    				 request({ url: timeurl, method: 'PUT', json: time})
 
