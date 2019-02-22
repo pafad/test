@@ -89,7 +89,7 @@ if(message.content.startsWith(">hr")) {
    				 
 
    				 var time = JSON.parse(body)
-                                 var nombre = 360000;
+                                 var hr = 360000;
    				 
 
    				 if(!time[message.author.id]) time[message.author.id] = {}
@@ -100,7 +100,7 @@ if(message.content.startsWith(">hr")) {
 
    				 
 
-   				 time[message.author.id].lastHr = new Date.now() +++ nombre;
+   				 time[message.author.id].lastHr = new Date.now() + hr;
 
    				 request({ url: timeurl, method: 'PUT', json: time})
 
