@@ -25,7 +25,7 @@ const timeurl = "https://api.myjson.com/bins/1dn9h4";
     var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
     var seconds = Math.floor((distance % (1000 * 60)) / 1000);			 
 
-    m.edit((time[message.author.id].lastHr < Date.now()) && (time[message.author.id].lastHr === 0)) ? "Disponible" : `${message.author.username} Ton Hr : ${hours}:${minutes}:${seconds}`);
+    m.edit((time[message.author.id].lastHr < Date.now()) && (time[message.author.id].lastHr === 0) ? "Disponible" : `${message.author.username} Ton Hr : ${hours}:${minutes}:${seconds}`);
     
     if((time[message.author.id].lastHr < Date.now()) && (time[message.author.id].lastHr === 0)){
  
