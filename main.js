@@ -89,7 +89,7 @@ if(message.content.startsWith(">hr")) {
    				 
 
    				 var time = JSON.parse(body)
-                                 var hr = 360000;
+                                 var hr = 1000*60*60;
    				 
 
    				 if(!time[message.author.id]) time[message.author.id] = {}
