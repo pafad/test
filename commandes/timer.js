@@ -24,9 +24,10 @@ const timeurl = "https://api.myjson.com/bins/1dn9h4";
     var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
     var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
     var seconds = Math.floor((distance % (1000 * 60)) / 1000);			 
-
-    m.edit((time[message.author.id].lastHr < Date.now()) && (time[message.author.id].lastHr === 0) ? "Disponible" : `${message.author.username} Ton Hr : ${hours}:${minutes}:${seconds}`);
     
+    setTimeout(() => {
+    m.edit((time[message.author.id].lastHr < Date.now()) && (time[message.author.id].lastHr === 0) ? "Disponible" : `${message.author.username} Ton Hr : ${hours}:${minutes}:${seconds}`);
+    }, 250)
     if((time[message.author.id].lastHr < Date.now()) && (time[message.author.id].lastHr === 0)){
  
     message.channel.send(`${message.author} Ton Hr est disponible !`) 
@@ -35,7 +36,7 @@ const timeurl = "https://api.myjson.com/bins/1dn9h4";
     
     }
     
-    	setInterval(timer, 1100)
+    	setInterval(timer, 1000)
     	
     	})
     
