@@ -35,7 +35,7 @@ const timeurl = "https://api.myjson.com/bins/1dn9h4";
     
     }
     
-    	setInterval(timer, 1000)
+    	setInterval(timer, 1100)
     	
     	})
     
