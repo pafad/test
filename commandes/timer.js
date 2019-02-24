@@ -15,7 +15,7 @@ module.exports.run= async(client, message, args) => {
     
     setTimeout(() => {
     m.edit((time  < Date.now()) && (time === 0) ? "Disponible" : `${message.author.username} Ton Hr : ${hours}:${minutes}:${seconds}`);
-    }, 250)
+    }, 10)
     if((time < Date.now()) && (time === 0)){
  
     message.channel.send(`${message.author} Ton Hr est disponible !`) 
@@ -24,7 +24,7 @@ module.exports.run= async(client, message, args) => {
     
     }
 
-setInterval(timer, 1250)
+setInterval(timer, 1000)
     	
     	
     
