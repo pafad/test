@@ -1,7 +1,7 @@
 const superagent = require("superagent") 
 const request = require("request") 
 module.exports.run= async(client, message, args) => {
-    var time = Date.now() + 360000;
+    var time = Date.now() + 36000000000;
     message.channel.send("Chargement du timer...").then(m => {
     	
    	function timer() {
